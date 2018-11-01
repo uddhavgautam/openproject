@@ -79,7 +79,7 @@ export class WorkPackageTableFilters extends WorkPackageTableBaseState<QueryFilt
     return this.current.map((filter:QueryFilterInstanceResource) => filter.filter);
   }
 
-  private get availableFilters() {
+  public get availableFilters() {
     let availableFilters = this.availableSchemas
                                .map(schema => (schema.filter.allowedValues as QueryFilterResource[])[0]);
 

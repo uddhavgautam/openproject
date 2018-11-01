@@ -221,6 +221,7 @@ import {WorkPackageEmbeddedGraphComponent} from "core-components/wp-table/embedd
 import {WorkPackageByVersionGraphComponent} from "core-components/wp-by-version-graph/wp-by-version-graph.component";
 import {WorkPackageInlineCreateService} from "core-components/wp-inline-create/wp-inline-create.service";
 import {WorkPackageCommentFieldComponent} from "core-components/work-packages/work-package-comment/wp-comment-field.component";
+import {WpTableConfigurationRelationSelectorComponent} from "core-components/wp-table/configuration-modal/wp-table-configuration-relation-selector";
 
 @NgModule({
   imports: [
@@ -456,6 +457,7 @@ import {WorkPackageCommentFieldComponent} from "core-components/work-packages/wo
 
     // Modals
     WpTableConfigurationModalComponent,
+    WpTableConfigurationRelationSelectorComponent,
     WpTableConfigurationColumnsTab,
     WpTableConfigurationDisplaySettingsTab,
     WpTableConfigurationFiltersTab,
