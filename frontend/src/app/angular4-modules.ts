@@ -122,7 +122,6 @@ import {WorkPackageNewSplitViewComponent} from 'core-components/wp-new/wp-new-sp
 import {WorkPackageQuerySelectDropdownComponent} from 'core-components/wp-query-select/wp-query-select-dropdown.component';
 import {WorkPackageQuerySelectableTitleComponent} from 'core-components/wp-query-select/wp-query-selectable-title.component';
 import {UrlParamsHelperService} from 'core-components/wp-query/url-params-helper';
-import {WpRelationAddChildComponent} from 'core-components/wp-relations/wp-relation-add-child/wp-relation-add-child';
 import {WorkPackageRelationsHierarchyComponent} from 'core-components/wp-relations/wp-relations-hierarchy/wp-relations-hierarchy.directive';
 import {WorkPackageRelationsHierarchyService} from 'core-components/wp-relations/wp-relations-hierarchy/wp-relations-hierarchy.service';
 import {WpRelationParentComponent} from 'core-components/wp-relations/wp-relations-parent/wp-relations-parent.component';
@@ -222,6 +221,8 @@ import {WorkPackageByVersionGraphComponent} from "core-components/wp-by-version-
 import {WorkPackageInlineCreateService} from "core-components/wp-inline-create/wp-inline-create.service";
 import {WorkPackageCommentFieldComponent} from "core-components/work-packages/work-package-comment/wp-comment-field.component";
 import {WpTableConfigurationRelationSelectorComponent} from "core-components/wp-table/configuration-modal/wp-table-configuration-relation-selector";
+import {WorkPackageInlineAddExistingChildService} from "core-components/wp-relations/wp-relation-add-child/wp-inline-add-existing-child.service";
+import {WorkPackageInlineAddExistingChildComponent} from "core-components/wp-relations/wp-relation-add-child/wp-inline-add-existing-child.component";
 
 @NgModule({
   imports: [
@@ -304,6 +305,7 @@ import {WpTableConfigurationRelationSelectorComponent} from "core-components/wp-
     // Provide a separate service for creation events of WP Inline create
     // This can be hierarchically injected to provide isolated events on an embedded table
     WorkPackageInlineCreateService,
+    WorkPackageInlineAddExistingChildService,
 
     OpTableActionsService,
     CurrentProjectService,
@@ -413,7 +415,6 @@ import {WpTableConfigurationRelationSelectorComponent} from "core-components/wp-
     WorkPackageRelationsCreateComponent,
     WorkPackageRelationsHierarchyComponent,
     WpRelationsAutocompleteComponent,
-    WpRelationAddChildComponent,
     WpRelationParentComponent,
 
     // Watchers tab
@@ -448,6 +449,7 @@ import {WpTableConfigurationRelationSelectorComponent} from "core-components/wp-
 
     // Inline create
     WorkPackageInlineCreateComponent,
+    WorkPackageInlineAddExistingChildComponent,
 
     // Embedded table
     WorkPackageEmbeddedTableComponent,
@@ -529,6 +531,9 @@ import {WpTableConfigurationRelationSelectorComponent} from "core-components/wp-
     WorkPackageOverviewTabComponent,
     WorkPackageEditFieldGroupComponent,
     WorkPackageCommentFieldComponent,
+
+    // Inline create
+    WorkPackageInlineAddExistingChildComponent,
 
     // Searchbar
     ExpandableSearchComponent,
