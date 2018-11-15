@@ -157,6 +157,8 @@ import {WorkPackageTableSumsRowController} from 'core-components/wp-table/wp-tab
 import {WorkPackagesTableController} from 'core-components/wp-table/wp-table.directive';
 import {ExternalQueryConfigurationComponent} from 'core-components/wp-table/external-configuration/external-query-configuration.component';
 import {ExternalQueryConfigurationService} from 'core-components/wp-table/external-configuration/external-query-configuration.service';
+import {ExternalRelationQueryConfigurationComponent} from 'core-components/wp-table/external-configuration/external-relation-query-configuration.component';
+import {ExternalRelationQueryConfigurationService} from 'core-components/wp-table/external-configuration/external-relation-query-configuration.service';
 import {WpTableExportModal} from "core-components/modals/export-modal/wp-table-export.modal";
 import {ConfirmDialogModal} from "core-components/modals/confirm-dialog/confirm-dialog.modal";
 import {ConfirmDialogService} from "core-components/modals/confirm-dialog/confirm-dialog.service";
@@ -333,6 +335,7 @@ import {WorkPackageInlineAddExistingChildComponent} from "core-components/wp-rel
 
     // External query configuration
     ExternalQueryConfigurationService,
+    ExternalRelationQueryConfigurationService,
 
     // Augmenting Rails
     ModalWrapperAugmentService,
@@ -481,6 +484,7 @@ import {WorkPackageInlineAddExistingChildComponent} from "core-components/wp-rel
 
     // External query configuration
     ExternalQueryConfigurationComponent,
+    ExternalRelationQueryConfigurationComponent,
 
     // Main menu
     MainMenuResizerComponent,
@@ -561,6 +565,7 @@ import {WorkPackageInlineAddExistingChildComponent} from "core-components/wp-rel
 
     // Modals
     WpTableConfigurationModalComponent,
+    WpTableConfigurationRelationSelectorComponent,
     WpTableConfigurationColumnsTab,
     WpTableConfigurationDisplaySettingsTab,
     WpTableConfigurationFiltersTab,
@@ -582,6 +587,7 @@ import {WorkPackageInlineAddExistingChildComponent} from "core-components/wp-rel
 
     // External query configuration
     ExternalQueryConfigurationComponent,
+    ExternalRelationQueryConfigurationComponent,
 
     // Main menu
     MainMenuResizerComponent,
@@ -626,6 +632,7 @@ export class OpenProjectModule {
 export function initializeServices(injector:Injector) {
   return () => {
     const ExternalQueryConfiguration = injector.get(ExternalQueryConfigurationService);
+    const ExternalRelationQueryConfiguration = injector.get(ExternalRelationQueryConfigurationService);
     const ModalWrapper = injector.get(ModalWrapperAugmentService);
     const EditorMacros = injector.get(EditorMacrosService);
 
@@ -634,5 +641,6 @@ export function initializeServices(injector:Injector) {
 
     // Setup query configuration listener
     ExternalQueryConfiguration.setupListener();
+    ExternalRelationQueryConfiguration.setupListener();
   };
 }
