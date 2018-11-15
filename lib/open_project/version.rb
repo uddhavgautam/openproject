@@ -32,10 +32,10 @@ require 'open3'
 
 module OpenProject
   module VERSION #:nodoc:
-    MAJOR = 8
-    MINOR = 2
-    PATCH = 0
-    TINY  = PATCH # Redmine compat
+    MAJOR ||= 8
+    MINOR ||= 2
+    PATCH ||= 0
+    TINY  ||= PATCH # Redmine compat
 
     # Used by semver to define the special version (if any).
     # A special version "satify but have a lower precedence than the associated
@@ -84,9 +84,9 @@ module OpenProject
       release_date_from_file || release_date_from_git
     end
 
-    REVISION = self.revision
-    ARRAY = [MAJOR, MINOR, PATCH, REVISION].compact
-    STRING = ARRAY.join('.')
+    REVISION ||= self.revision
+    ARRAY ||= [MAJOR, MINOR, PATCH, REVISION].compact
+    STRING ||= ARRAY.join('.')
 
     def self.to_a; ARRAY end
     def self.to_s; STRING end
